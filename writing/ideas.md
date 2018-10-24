@@ -2,9 +2,7 @@
 
 
 ## Date: 24 Oct 2018
-## Group Names:
-
-
+## Group Names: Lancaster Wu, Devin Ho, Jon Reibel
 
 
 For each of your five ideas, please respond to the following. Each person is to submit a markdown document containing the names of his or her group members.
@@ -13,7 +11,7 @@ Please be sure that you justify why your idea is of interest to discrete structu
 
 
 
-### Idea 1
+### Idea 1: Graph Theory
 1) Explain your idea for a class project.
 
 2) How is the idea connected to computer science?
@@ -25,7 +23,7 @@ Please be sure that you justify why your idea is of interest to discrete structu
 5) How will this article support your idea?
 
 
-### Idea 2
+### Idea 2: Golden Ratio
 1) Explain your idea for a class project.
 
 2) How is the idea connected to computer science?
