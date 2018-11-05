@@ -33,7 +33,6 @@ It seems like a recently updated guide for learning graph theory, we can start f
 The central thesis of the article is to help people better understand the graph theory and provided some code for people to try and learn.
 
 5) How will this article support your idea?
-
 This article can be a great example for us to start this project, we definitely need to do more research and to find a more professional paper about the graph theory. However, it can be a good start for us to reach our final goal which is to find out the efficiency of running a random generated input map by using graph theory.
 
 ### Idea 2: Golden Ratio
@@ -62,6 +61,7 @@ This piece from the article shows just one of the many applications of this rati
 The central thesis in this article discusses the importance of the golden ratio, how it can be derived and how it can be utilized in various fields. (obviously including computer science)
 
 5) How will this article support your idea?
+
 This article will provide support by further explaining the above piece. Through this explanation we can take what we have learned from our courses and apply it in order to try and create an application based on the explanation. The article may also provide useful examples that could further help our efforts.
 
 
