@@ -1,8 +1,13 @@
 # Ideas and articles
 
+Graph Theory - https://www.python-course.eu/graphs_python.php
+Golden Ratio -  https://www.sciencedirect.com/science/article/pii/S089812210800031X (download PDF)
+Bayesian Statistics - https://books.google.com/books?hl=en&lr=&id=cYHHAAAAQBAJ&oi=fnd&pg=PP1&dq=Bayesian+statistics+in+python&ots=zolqYVuzyo&sig=deI83lfjK9RvzeGZhunbxlWVK14#v=onepage&q&f=false
+Idea 4 -
+Idea 5 - 
 
 ## Date: 24 Oct 2018
-## Group Names: Lancaster Wu, Devin Ho, Jon Reibel
+## Group Names: Lancaster Wu, Devin Ho, Jon Reibel, Devin Spitalny
 
 
 For each of your five ideas, please respond to the following. Each person is to submit a markdown document containing the names of his or her group members.
@@ -11,7 +16,7 @@ Please be sure that you justify why your idea is of interest to discrete structu
 
 
 
-### Idea 1: Graph Theory
+### Idea 1: Graph Theory - Lancaster Wu
 1) Explain your idea for a class project.
 
 Use Graph Theory to make a complex maze. We can randomly generate the Vertices(The nodes or vertices) and the Edges(The connections between the vertices). Then we can randomly locate a maze-runner, and make it run to the end of the maze.
@@ -35,7 +40,7 @@ The central thesis of the article is to help people better understand the graph 
 5) How will this article support your idea?
 This article can be a great example for us to start this project, we definitely need to do more research and to find a more professional paper about the graph theory. However, it can be a good start for us to reach our final goal which is to find out the efficiency of running a random generated input map by using graph theory.
 
-### Idea 2: Golden Ratio
+### Idea 2: Golden Ratio - Jon Reibel
 1) Explain your idea for a class project.
 
  The idea behind this project is to find an application in which the golden ratio could be utilized. WE know from in class studies that this ratio is found everywhere in nature, but is there a way to apply this number for further benefit in computer science. So the goal of the project is to utilize the golden ratio as a means of generating random numbers. We can then compare the results of this algorithm to those provided in various libraries or packages.
@@ -65,18 +70,29 @@ The central thesis in this article discusses the importance of the golden ratio,
 This article will provide support by further explaining the above piece. Through this explanation we can take what we have learned from our courses and apply it in order to try and create an application based on the explanation. The article may also provide useful examples that could further help our efforts.
 
 
-### Idea 3
+### Bayesian Statistics  - Devin Spitalny
 1) Explain your idea for a class project.
+
+The idea behind this project would be to use Bayesian statistics in a sports sense. Bayesian statistics is the probability of something occurring. For example I plan on using a Bayesian statistics to project whether one team will beat another team based on information and data that was given like wins/losses, key players, and home/away.
 
 2) How is the idea connected to computer science?
 
+Bayesian Statistics connects to computer science because you make a program in python that can predict a scenario based on the information you give in the code. You could utilize this in many ways like what marble you are most likely going to get, what team will win the game, whether it will rain or not and etc it all depends on the information you put on the code that will be the factor of what happens.  
+
 3) What is the article's reference to support this idea? Note: Articles are no older than five years
+
 # Article link
+https://books.google.com/books?hl=en&lr=&id=cYHHAAAAQBAJ&oi=fnd&pg=PP1&dq=Bayesian+statistics+in+python&ots=zolqYVuzyo&sig=deI83lfjK9RvzeGZhunbxlWVK14#v=onepage&q&f=false
+
+This is a short book/article describing and explaining the use of Bayesian Statistics in python. That is perfect because my whole topic is about using Bayesian statistics to predict outcomes to a sports events like a basketball game. This books/article defines the meaning of Bayesian Statistics and shows examples like the cookie problem which is what is the probability you would get a vanilla cookie from a cookie jar that holds 50 cookies and 5 different flavors that represent ten cookies each. So I believe this book/article is perfect because it shows and explains examples of Bayesian statistics in a python setting.
 
 4) What is the central thesis to the article?
 
+The central thesis of this book/article is describing that Bayesian statistics is a math therom that could be used in python to figure out the probability of a situation depending on the information you provide it with just like using the cookie problem as example to find the probability of what flavored cookie you will get in a 50 cookie max jar.
+
 5) How will this article support your idea?
 
+This article supports my idea of using the Bayesian statistics to pick what team wins a sporting event like a basketball game because it explains and shows examples in python of Bayesian statistics.
 
 ### Idea 4
 1) Explain your idea for a class project.
