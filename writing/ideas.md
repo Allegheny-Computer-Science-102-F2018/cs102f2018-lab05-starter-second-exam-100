@@ -4,7 +4,7 @@ Graph Theory - https://www.python-course.eu/graphs_python.php
 Golden Ratio -  https://www.sciencedirect.com/science/article/pii/S089812210800031X (download PDF)
 Bayesian Statistics - https://books.google.com/books?hl=en&lr=&id=cYHHAAAAQBAJ&oi=fnd&pg=PP1&dq=Bayesian+statistics+in+python&ots=zolqYVuzyo&sig=deI83lfjK9RvzeGZhunbxlWVK14#v=onepage&q&f=false
 Idea 4 -
-Idea 5 - 
+Idea 5 -
 
 ## Date: 24 Oct 2018
 ## Group Names: Lancaster Wu, Devin Ho, Jon Reibel, Devin Spitalny
@@ -70,7 +70,7 @@ The central thesis in this article discusses the importance of the golden ratio,
 This article will provide support by further explaining the above piece. Through this explanation we can take what we have learned from our courses and apply it in order to try and create an application based on the explanation. The article may also provide useful examples that could further help our efforts.
 
 
-### Bayesian Statistics  - Devin Spitalny
+### Idea 3: Bayesian Statistics - Devin Spitalny
 1) Explain your idea for a class project.
 
 The idea behind this project would be to use Bayesian statistics in a sports sense. Bayesian statistics is the probability of something occurring. For example I plan on using a Bayesian statistics to project whether one team will beat another team based on information and data that was given like wins/losses, key players, and home/away.
@@ -94,18 +94,28 @@ The central thesis of this book/article is describing that Bayesian statistics i
 
 This article supports my idea of using the Bayesian statistics to pick what team wins a sporting event like a basketball game because it explains and shows examples in python of Bayesian statistics.
 
-### Idea 4
+### Idea 4: Truth Tables & Boolean Logic - Devin Ho
 1) Explain your idea for a class project.
+
+This idea utilizes truth tables in order to authenticate whether or not a product is authentic or not. In today's world, there is an immense production of fake goods that are in the market. However, if there is a perfect program to identify its legitimacy, then people will feel more secure when purchasing a product in the resell market. Generally, a product's legitimacy is not a concern from a retail store like Nike.com. A piece of software could authenticate whether or not a product is real. Then, whoever is selling the product can then list their product on the software for a buyer to buy. Once a price is matched, the seller will send the product to the middle-man company who owns the software. The middle-man company will confirm that the product is real and then finally send it to the buyer. This is a similar concept to StockX, which is a website that already performs this idea. However, they do not share the means of how they authenticate the product, nor do they have a software that determines it.
 
 2) How is the idea connected to computer science?
 
+Through the use of a software, the code could apply truth tables and Boolean logic in order to authenticate the product. In a truth table, logical operators is ideal with dealing with the legitimacy of a product. Thus, this truth table can also act as a legitimacy guide for many sellers and buyers alike.
+
+
 3) What is the article's reference to support this idea? Note: Articles are no older than five years
+
 # Article link
+http://www.asu.edu/courses/phi103/PDFs/ttables01.pdf
 
 4) What is the central thesis to the article?
 
+An argument is INVALID if and only if it is logically possible for the conclusion to be false even though every premise is assumed to be true. Truth tables apply Boolean logic in order to determine whether or not something results in true or false.
+
 5) How will this article support your idea?
 
+This article explains the concept of truth tables and how they are used in conjunction with Boolean logic. We can then apply this knowledge when developing a software that allows the user to determine the legitimacy of their product. The consumer can finally purchase something through a comfortable and safe platform.
 
 ### Idea 5
 1) Explain your idea for a class project.
