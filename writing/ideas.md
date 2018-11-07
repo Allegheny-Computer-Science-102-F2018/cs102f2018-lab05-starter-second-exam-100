@@ -3,7 +3,7 @@
 Graph Theory - https://www.python-course.eu/graphs_python.php
 Golden Ratio -  https://www.sciencedirect.com/science/article/pii/S089812210800031X (download PDF)
 Bayesian Statistics - https://books.google.com/books?hl=en&lr=&id=cYHHAAAAQBAJ&oi=fnd&pg=PP1&dq=Bayesian+statistics+in+python&ots=zolqYVuzyo&sig=deI83lfjK9RvzeGZhunbxlWVK14#v=onepage&q&f=false
-Idea 4 -
+Truth Tables & Boolean Logic - http://www.asu.edu/courses/phi103/PDFs/ttables01.pdf
 Idea 5 -
 
 ## Date: 24 Oct 2018
@@ -16,7 +16,7 @@ Please be sure that you justify why your idea is of interest to discrete structu
 
 
 
-### Idea 1: Graph Theory - Lancaster Wu
+### Idea 1: Graph Theory -
 1) Explain your idea for a class project.
 
 Use Graph Theory to make a complex maze. We can randomly generate the Vertices(The nodes or vertices) and the Edges(The connections between the vertices). Then we can randomly locate a maze-runner, and make it run to the end of the maze.
@@ -117,7 +117,7 @@ An argument is INVALID if and only if it is logically possible for the conclusio
 
 This article explains the concept of truth tables and how they are used in conjunction with Boolean logic. We can then apply this knowledge when developing a software that allows the user to determine the legitimacy of their product. The consumer can finally purchase something through a comfortable and safe platform.
 
-### Idea 5
+### Idea 5 - Lancaster Wu
 1) Explain your idea for a class project.
 
 2) How is the idea connected to computer science?
