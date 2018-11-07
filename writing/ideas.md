@@ -1,11 +1,3 @@
-# Ideas and articles
-
-Graph Theory - https://www.python-course.eu/graphs_python.php
-Golden Ratio -  https://www.sciencedirect.com/science/article/pii/S089812210800031X (download PDF)
-Bayesian Statistics - https://books.google.com/books?hl=en&lr=&id=cYHHAAAAQBAJ&oi=fnd&pg=PP1&dq=Bayesian+statistics+in+python&ots=zolqYVuzyo&sig=deI83lfjK9RvzeGZhunbxlWVK14#v=onepage&q&f=false
-Idea 4 -
-Idea 5 -
-
 ## Date: 24 Oct 2018
 ## Group Names: Lancaster Wu, Devin Ho, Jon Reibel, Devin Spitalny
 
@@ -13,6 +5,21 @@ Idea 5 -
 For each of your five ideas, please respond to the following. Each person is to submit a markdown document containing the names of his or her group members.
 
 Please be sure that you justify why your idea is of interest to discrete structures.
+
+# Ideas and articles
+
+#1 Graph Theory:
+https://www.python-course.eu/graphs_python.php
+
+#2 Golden Ratio:
+https://www.sciencedirect.com/science/article/pii/S089812210800031X (download PDF)
+
+#3 Bayesian Statistics: https://books.google.com/books?hl=en&lr=&id=cYHHAAAAQBAJ&oi=fnd&pg=PP1&dq=Bayesian+statistics+in+python&ots=zolqYVuzyo&sig=deI83lfjK9RvzeGZhunbxlWVK14#v=onepage&q&f=false
+
+#4 Truth Tables & Boolean Logic:
+http://www.asu.edu/courses/phi103/PDFs/ttables01.pdf
+
+#5 Using Python in Other Scientific Disciplines: https://www.sciencedirect.com/science/article/pii/S0010465512003086 (Download PDF)
 
 
 
@@ -88,7 +95,7 @@ This is a short book/article describing and explaining the use of Bayesian Stati
 
 4) What is the central thesis to the article?
 
-The central thesis of this book/article is describing that Bayesian statistics is a math therom that could be used in python to figure out the probability of a situation depending on the information you provide it with just like using the cookie problem as example to find the probability of what flavored cookie you will get in a 50 cookie max jar.
+The central thesis of this book/article is describing that Bayesian statistics is a math theorem that could be used in python to figure out the probability of a situation depending on the information you provide it with just like using the cookie problem as example to find the probability of what flavored cookie you will get in a 50 cookie max jar.
 
 5) How will this article support your idea?
 
@@ -117,13 +124,32 @@ An argument is INVALID if and only if it is logically possible for the conclusio
 
 This article explains the concept of truth tables and how they are used in conjunction with Boolean logic. We can then apply this knowledge when developing a software that allows the user to determine the legitimacy of their product. The consumer can finally purchase something through a comfortable and safe platform.
 
-### Idea 5
+### Idea 5:  Using Python in Other Scientific Disciplines. - Jon Reibel
 1) Explain your idea for a class project.
+
+Since we have learned about Python and its large capabilities, it would be interesting to see how it can be utilized in other areas. So, our goal for this project would be to find a high level science problem in some other discipline. From there apply what we have learned in order to try and generate a solution. We would then discuss our implementation and go in depth of why our Python program is able to give us a solution to this problem.
 
 2) How is the idea connected to computer science?
 
+The most obvious connection is using the Python programming language. We would also utilize the skills covered in class in order to successfully solve our intended application.
+
 3) What is the article's reference to support this idea? Note: Articles are no older than five years
+
+# Article link
+https://www.sciencedirect.com/science/article/pii/S0010465512003086 (Download PDF)
+
+The abstract of the article again contains the inspiration for the idea.
+
+" This paper examines the feasibility of high-level Python based utilities for numerically intensive
+applications via an example of a multidimensional integration for the evaluation of the statistical
+characteristics of a random variable. "
+
+This piece from the article discusses how Python can be utilized for more math based applications. since most of the other branches of science deal heavily in math, it will gives us some ideas in order to apply Python to a more advanced application (Outside of computer science).
 
 4) What is the central thesis to the article?
 
+The central thesis of the article describes how high-level languages can be applied to other heavy numerical cases. Also how the models can be efficient tools for implementation and modification of models and formulas.
+
 5) How will this article support your idea?
+
+This article will support our idea by giving us a little information on outside applications. This article focuses on more math based examples, which is fine as science is heavily math based. Using the topics covered in the article, we will then be able to try and apply the Python language to a problem in another scientific discipline. Hopefully, by doing so we will be able to generate a solution and be able to understand the efficiency of the language outside of computer science.
