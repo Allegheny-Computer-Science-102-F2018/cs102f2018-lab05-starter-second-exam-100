@@ -64,8 +64,8 @@ class App:
 
         pygame.display.set_caption('Pygame pythonspot.com example')
         self._running = True
-        self._image_surf = pygame.image.load("player.png").convert()
-        self._block_surf = pygame.image.load("block.png").convert()
+        self._image_surf = pygame.image.load("red.png").convert()
+        self._block_surf = pygame.image.load("green.png").convert()
 
     def on_event(self, event):
         if event.type == QUIT:
