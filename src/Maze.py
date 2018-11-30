@@ -114,7 +114,7 @@ class App:
             self.on_render()
         self.on_cleanup()
 
-    pygame.sprite.spritecollide(Player, Maze, True)
+    #pygame.sprite.spritecollide(Player, Maze, True)
 
 if __name__ == "__main__" :
     theApp = App()
