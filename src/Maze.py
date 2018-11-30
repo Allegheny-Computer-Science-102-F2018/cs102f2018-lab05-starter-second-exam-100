@@ -27,7 +27,7 @@ class Maze:
                      1,0,0,0,0,0,0,0,0,1,
                      1,0,1,1,1,1,1,1,0,1,
                      1,0,1,0,0,0,0,0,0,1,
-                     1,0,1,0,1,1,1,1,0,1,
+                     1,0,1,1,1,1,1,1,0,1,
                      1,0,0,0,0,0,0,0,0,1,
                      1,1,1,1,1,1,1,1,1,1,]
 
@@ -45,6 +45,9 @@ class Maze:
 
 
 class App:
+    width, height = 800, 600
+    hbox, vbox = 20, 20
+    #screen = pg.display.set_mode((width, height))
 
     windowWidth = 800
     windowHeight = 600
@@ -80,6 +83,7 @@ class App:
         self.maze.draw(self._display_surf, self._block_surf)
         pygame.display.flip()
 
+
     def on_cleanup(self):
         pygame.quit()
 
@@ -109,6 +113,8 @@ class App:
             self.on_loop()
             self.on_render()
         self.on_cleanup()
+
+    pygame.sprite.spritecollide(Player, Maze, True)
 
 if __name__ == "__main__" :
     theApp = App()
