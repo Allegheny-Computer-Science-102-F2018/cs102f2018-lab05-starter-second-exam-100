@@ -88,6 +88,7 @@ class App:
     def on_cleanup(self):
         pygame.quit()
 
+
     def on_execute(self):
         if self.on_init() == False:
             self._running = False
