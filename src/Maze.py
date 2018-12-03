@@ -58,6 +58,7 @@ class App:
         self._display_surf = None
         self._image_surf = None
         self._block_surf = None
+        self._bg_surf = None
         self.player = Player()
         self.maze = Maze()
 
@@ -69,7 +70,7 @@ class App:
         self._running = True
         self._image_surf = pygame.image.load("player.png").convert()
         self._block_surf = pygame.image.load("block.png").convert()
-        self._block_surf = pygame.image.load("bg.png").convert()
+        self._bg_surf = pygame.image.load("bg.png").convert()
 
     def on_event(self, event):
         if event.type == QUIT:
