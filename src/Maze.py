@@ -66,11 +66,13 @@ class App:
         pygame.init()
         self._display_surf = pygame.display.set_mode((self.windowWidth,self.windowHeight), pygame.HWSURFACE)
 
-        pygame.display.set_caption('Pygame pythonspot.com example')
+        pygame.display.set_caption('Pikachu Must Go')
         self._running = True
         self._image_surf = pygame.image.load("player.png").convert()
         self._block_surf = pygame.image.load("block.png").convert()
         self._bg_surf = pygame.image.load("bg.png").convert()
+        a = pygame.image.load('player.png')
+        pygame.display.set_icon(a)
 
     def on_event(self, event):
         if event.type == QUIT:
@@ -122,3 +124,5 @@ class App:
 if __name__ == "__main__" :
     theApp = App()
     theApp.on_execute()
+
+    pygame.quit()
