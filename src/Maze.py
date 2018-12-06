@@ -171,11 +171,8 @@ def pikachu_is_lost():
 def main():
     start_time = time.time()
     theApp = App()
+    #all_sprite_list.update()
     theApp.on_execute()
-<<<<<<< HEAD
-=======
-    all_sprite_list.update()
->>>>>>> af7613bd0a5d5197cdc381a3c977ede15d5386ff
     pygame.quit()
     elapsed_time = time.time() - start_time
     time.sleep(2)
