@@ -1,7 +1,7 @@
 from pygame.locals import *
 import pygame
 
-class Player:
+class Player(pygame.sprite.Sprite):
     x = 44
     y = 44
     speed = 1
@@ -18,7 +18,26 @@ class Player:
     def moveDown(self):
         self.y = self.y + self.speed
 
-class Maze:
+    def update(self):
+        block_hit_list = pygame.sprite.spritecollide(self, self.Maze, False)
+
+        for block in block_hit_list:
+        		if self.change_x > 0:
+        			self.rect.right = block.rect.left
+        		else:
+        			self.rect.left = block.rect.right
+
+        self.rect.y += self.change_y
+
+        block_hit_list = pygame.sprite.spritecollide(self, self.Maze, False)
+
+        for block in block_hit_list:
+            		if self.change_y > 0:
+            			self.rect.bottom = block.rect.top
+            		else:
+            			self.rect.top = block.rect.bottom
+
+class Maze(pygame.sprite.Sprite):
     def __init__(self):
        self.M = 10
        self.N = 8
@@ -43,7 +62,6 @@ class Maze:
                bx = 0
                by = by + 1
 
-
 class App:
     width, height = 800, 600
     hbox, vbox = 20, 20
@@ -53,12 +71,18 @@ class App:
     windowHeight = 800
     player = 0
 
+    #pygame.init()
+    #all_sprite_list = pygame.sprite.Group()
+    #all_sprite_list.add(Player)
+    #all_sprite_list.add(Maze)
+
     def __init__(self):
         self._running = True
         self._display_surf = None
         self._image_surf = None
         self._block_surf = None
         self._bg_surf = None
+
         self.player = Player()
         self.maze = Maze()
 
@@ -70,11 +94,13 @@ class App:
         self._running = True
         self._image_surf = pygame.image.load("player.png").convert()
         self._block_surf = pygame.image.load("block.png").convert()
-        self._bg_surf = pygame.image.load("bg.png").convert()
-        a = pygame.image.load('player.png')
+        img = pygame.image.load('bg.png')
+
+        a = pygame.image.load('icon.png')
         pygame.display.set_icon(a)
 
     def on_event(self, event):
+
         if event.type == QUIT:
             self._running = False
 
@@ -106,6 +132,7 @@ class App:
             if (keys[K_LEFT]):
                 self.player.moveLeft()
 
+
             if (keys[K_UP]):
                 self.player.moveUp()
 
@@ -119,10 +146,9 @@ class App:
             self.on_render()
         self.on_cleanup()
 
-    #pygame.sprite.spritecollide(Player, Maze, True)
 
 if __name__ == "__main__" :
     theApp = App()
     theApp.on_execute()
-
+    all_sprite_list.update()
     pygame.quit()
