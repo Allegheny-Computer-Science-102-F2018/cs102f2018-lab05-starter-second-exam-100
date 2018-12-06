@@ -72,44 +72,87 @@ class Maze1(Maze):
     """This creates all the blocks in maze 1"""
     def __init__(self):
         super().__init__()
-        blocks = [[0, 0],
-                 [0, 44],
-                 [0, 88],
+        blocks = [[0, 0], #origin block
+                 #[0, 44], #left border start
+                 [0, 44*2],
                  [0, 44*3],
                  [0, 44*4],
                  [0, 44*5],
-                 [44, 0]
+                 [44, 44*5],
+                 [44*2, 44*5],
+                 [44*3, 44*5],
+                 [44*4, 44*5],
+                 [44*5, 44*5],
+                 [44*6, 44*5],
+                 [44*7, 44*5],
+                 [44*8, 44*5],
+                 [44*8, 44*6],
+                 [44*8, 44*7],
+                 [44*8, 44*8],
+                 [44*8, 44*9],
+                 [44*8, 44*10],
+                 [44*7, 44*10],
+                 [1717, 0], #right border start
+                 [44, 0], #top border start
+                 [44*2, 0],
+                 [44*2, 0],
+                 [44*3, 0],
+                 [44*4, 0],
+                 [44*5, 0],
+                 [44*6, 0],
+                 [44*7, 0],
+                 [44*8, 0],
+                 [44*9, 0],
+                 [44*10, 0],
+                 [44*10, 0],
+                 [44*10, 44],
+                 [44*10, 44*2],
+                 [44*10, 44*3],
+                 [44*10, 44*4],
+                 [44*10, 44*5],
+                 [44*10, 44*6],
+                 [44*10, 44*7],
+                 [44*10, 44*8],
+                 [44*10, 44*9],
+                 [44*10, 44*10],
                 ]
         for item in blocks:
             block = Block(item[0], item[1])
             self.block_list.add(block)
-
-
-class Maze2(Maze):
-    def __init__(self):
-        super().__init__()
-
-        blocks = []
-
-        for item in blocks:
-            block = Block(item[0], item[1])
-            self.block_list.add(block)
-
-
-class Maze3(Maze):
-    def __init__(self):
-        super().__init__()
-
-        blocks = []
-
-        for item in blocks:
-            block = Block(item[0], item[1])
-            self.block_list.add(block)
-
-        for x in range(100, 800, 100):
-            for y in range(50, 451, 300):
-                block = Block(x, y)
+"""
+        for i in range(1,20):
+            for item in blocks:
+                block = Block(item[0]*i, item[1])
                 self.block_list.add(block)
+"""
+
+
+class Maze2(Maze): #right maze
+    def __init__(self):
+        super().__init__()
+
+        blocks = []
+
+        for item in blocks:
+            block = Block(item[0], item[1])
+            self.block_list.add(block)
+
+
+class Maze3(Maze): #left maze
+    def __init__(self):
+        super().__init__()
+
+        blocks = []
+
+        for item in blocks:
+            block = Block(item[0], item[1])
+            self.block_list.add(block)
+
+        for i in range(40):
+            for x in range(1760):
+                for y in range(0):
+                    block = Block(x*i, y)
+                    self.block_list.add(block)
 
         for x in range(150, 700, 100):
             block = Block(x, 200)
@@ -137,11 +180,17 @@ def pikachu_is_lost():
 def main():
     pygame.init()
 
-    screen = pygame.display.set_mode([880, 880])
+    screen = pygame.display.set_mode([1760, 880])
 
-    pygame.display.set_caption('Maze Runner')
-
-    player = Player(50, 50)
+    pygame.display.set_caption('Pikachu Must Go!')
+    icon = pygame.image.load('icon.png')    #Loads icon for taskbar and window
+    pygame.display.set_icon(icon)
+    background = pygame.image.load('icon.png')
+    background = pygame.transform.scale(background, (500, 720))
+    rect = background.get_rect()
+    rect = rect.move((0,0))
+    screen.blit(background, rect)
+    player = Player(40, 40)
     movingsprites = pygame.sprite.Group()
     movingsprites.add(player)
 
@@ -207,7 +256,7 @@ def main():
                 current_maze = mazes[current_maze_no]
                 player.rect.x = 790
 
-        if player.rect.x > 801:
+        if player.rect.x > 1720:
             if current_maze_no == 0:
                 current_maze_no = 1
                 current_maze = mazes[current_maze_no]
@@ -239,7 +288,7 @@ def main():
 # def end_message():
 
 if __name__ == "__main__":
-    intro()
+    #intro()
     inp = input ("Are you ready for this? (Type 'y' for ready) ")
     if inp != "y":
         pikachu_is_lost()
