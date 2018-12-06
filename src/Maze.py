@@ -1,5 +1,8 @@
-from pygame.locals import *
-import pygame
+import contextlib
+with contextlib.redirect_stdout(None):
+    from pygame.locals import *
+    import pygame
+import time
 
 class Player:
     x = 44
@@ -121,8 +124,41 @@ class App:
 
     #pygame.sprite.spritecollide(Player, Maze, True)
 
-if __name__ == "__main__" :
+def intro():
+    print("Welcome to the Python game: Pikachu Must Go!")
+    time.sleep(3)
+    print("Pikachu is lost in a maze")
+    time.sleep(3)
+    print("As a kind Allegheny student, you can help him to get home!")
+    time.sleep(5)
+    print("It would be great if he can get home as soon as possible :)")
+    time.sleep(3)
+
+
+def pikachu_is_lost():
+    print("Where is your Gator Pride???")
+    time.sleep(3)
+    print("Pikachu is now lost in this maze forever...")
+    quit()
+
+
+def main():
+    start_time = time.time()
     theApp = App()
     theApp.on_execute()
-
     pygame.quit()
+    elapsed_time = time.time() - start_time
+    time.sleep(2)
+    print("It took you ", elapsed_time, " seconds to reach the end of Maze")
+
+
+#def end_message():
+
+if __name__ == "__main__" :
+    intro()
+    inp = input ("Are you ready for this? (Type 'y' for ready) ")
+    if inp != "y":
+        pikachu_is_lost()
+    else:
+        main()
+        #end_message()
