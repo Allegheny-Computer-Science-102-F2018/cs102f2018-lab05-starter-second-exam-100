@@ -40,18 +40,44 @@ class Player(pygame.sprite.Sprite):
             		else:
             			self.rect.top = block.rect.bottom
 
+
+class GameObject(pygame.sprite.Sprite):
+    def __init__(self, image):
+        super().__init__()
+        self.image = image
+        self.rect = self.image.get_rect()
+        self.mask = pygame.mask.from_surface(image)
+
+    def can_move(self, delta_pos, wall_map, count=1):
+        old_pos = self.rect.center
+        self.rect.centerx = self.rect.centerx + delta_pos[0]
+        self.rect.centery = self.rect.centery + delta_pos[0]
+        result = bool(pygame.sprite.collide_mask(self, wall_map))
+        if count:
+            result &= not self.can_move(delta_pos, wall_map, count - 1)
+        self.rect.center = old_pos
+        return not result
+
+
 class Maze(pygame.sprite.Sprite):
     def __init__(self):
-       self.M = 10
-       self.N = 8
-       self.maze = [ 1,1,1,1,1,1,1,1,1,1,
-                     1,0,0,0,0,0,0,0,0,1,
-                     1,0,0,0,0,0,0,0,0,1,
-                     1,0,1,1,1,1,1,1,0,1,
-                     1,0,1,0,0,0,0,0,0,1,
-                     1,0,1,1,1,1,1,1,0,1,
-                     1,0,0,0,0,0,0,0,0,1,
-                     1,1,1,1,1,1,1,1,1,1,]
+       self.M = 15
+       self.N = 15
+       self.maze = [ 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+                     0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,
+                     1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,
+                     1,1,1,1,1,1,1,0,0,0,0,0,0,0,1,
+                     1,1,1,1,1,1,1,0,1,1,1,1,1,0,1,
+                     1,1,1,1,1,1,1,0,1,0,0,0,1,0,1,
+                     1,1,1,1,1,1,1,0,1,0,1,1,1,0,1,
+                     1,1,1,1,1,1,1,0,0,0,0,0,0,0,1,
+                     1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,
+                     1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,
+                     1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,
+                     1,1,1,1,1,1,1,0,0,0,0,1,1,1,1,
+                     1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,
+                     1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,
+                     1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,]
 
     def draw(self,display_surf,image_surf):
        bx = 0
@@ -74,10 +100,7 @@ class App:
     windowHeight = 800
     player = 0
 
-    #pygame.init()
-    #all_sprite_list = pygame.sprite.Group()
-    #all_sprite_list.add(Player)
-    #all_sprite_list.add(Maze)
+    pygame.init()
 
     def __init__(self):
         self._running = True
@@ -85,9 +108,12 @@ class App:
         self._image_surf = None
         self._block_surf = None
         self._bg_surf = None
+        self.character = None
+        self.bg = None
 
         self.player = Player()
         self.maze = Maze()
+
 
     def on_init(self):
         pygame.init()
@@ -95,12 +121,14 @@ class App:
 
         pygame.display.set_caption('Pikachu Must Go')
         self._running = True
-        self._image_surf = pygame.image.load("player.png").convert()
-        self._block_surf = pygame.image.load("block.png").convert()
+        self.character = pygame.image.load("player.png").convert()
+        self.bg = pygame.image.load("block.png").convert()
         img = pygame.image.load('bg.png')
+        #a = pygame.image.load('icon.png')
+        #pygame.display.set_icon(a)
+        self._image_surf = GameObject(self.character)
 
-        a = pygame.image.load('icon.png')
-        pygame.display.set_icon(a)
+        self._block_surf = GameObject(self.bg)
 
     def on_event(self, event):
 
@@ -112,8 +140,8 @@ class App:
 
     def on_render(self):
         self._display_surf.fill((0,0,0))
-        self._display_surf.blit(self._image_surf,(self.player.x,self.player.y))
-        self.maze.draw(self._display_surf, self._block_surf)
+        self._display_surf.blit(self._image_surf.image,(self.player.x,self.player.y), self._image_surf.rect)
+        self.maze.draw(self._display_surf, self._block_surf.image)
         pygame.display.flip()
 
 
@@ -179,7 +207,7 @@ def main():
     print("It took you ", elapsed_time, " seconds to reach the end of Maze")
 
 
-#def end_message():
+# def end_message():
 
 if __name__ == "__main__" :
     intro()
