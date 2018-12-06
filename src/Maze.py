@@ -4,178 +4,116 @@ with contextlib.redirect_stdout(None):
     import pygame
 import time
 
+BLACK = (0, 0, 0)
+WHITE = (255, 255, 255)
+BLUE = (0, 0, 255)
+
+
+class Block(pygame.sprite.Sprite):
+
+    def __init__(self, x, y):
+
+        super().__init__()
+
+        self.image = pygame.image.load("block.png").convert()
+
+        self.rect = self.image.get_rect()
+        self.rect.y = y
+        self.rect.x = x
+
+
 class Player(pygame.sprite.Sprite):
-    x = 44
-    y = 44
-    speed = 1
 
-    def moveRight(self):
-        self.x = self.x + self.speed
+    change_x = 0
+    change_y = 0
 
-    def moveLeft(self):
-        self.x = self.x - self.speed
+    def __init__(self, x, y):
+        super().__init__()
 
-    def moveUp(self):
-        self.y = self.y - self.speed
+        self.image = pygame.image.load("player.png").convert()
+        self.rect = self.image.get_rect()
+        self.rect.y = y
+        self.rect.x = x
 
-    def moveDown(self):
-        self.y = self.y + self.speed
+    def changespeed(self, x, y):
+        self.change_x += x
+        self.change_y += y
 
-    def update(self):
-        block_hit_list = pygame.sprite.spritecollide(self, self.Maze, False)
-
+    def move(self, blocks):
+        self.rect.x += self.change_x
+        block_hit_list = pygame.sprite.spritecollide(self, blocks, False)
         for block in block_hit_list:
-        		if self.change_x > 0:
-        			self.rect.right = block.rect.left
-        		else:
-        			self.rect.left = block.rect.right
+            if self.change_x > 0:
+                self.rect.right = block.rect.left
+            else:
+                self.rect.left = block.rect.right
 
         self.rect.y += self.change_y
 
-        block_hit_list = pygame.sprite.spritecollide(self, self.Maze, False)
-
+        block_hit_list = pygame.sprite.spritecollide(self, blocks, False)
         for block in block_hit_list:
-            		if self.change_y > 0:
-            			self.rect.bottom = block.rect.top
-            		else:
-            			self.rect.top = block.rect.bottom
+
+            if self.change_y > 0:
+                self.rect.bottom = block.rect.top
+            else:
+                self.rect.top = block.rect.bottom
 
 
-class GameObject(pygame.sprite.Sprite):
-    def __init__(self, image):
+class Maze(object):
+    block_list = None
+    enemy_sprites = None
+
+    def __init__(self):
+        self.block_list = pygame.sprite.Group()
+        self.enemy_sprites = pygame.sprite.Group()
+
+
+class Maze1(Maze):
+    """This creates all the blocks in maze 1"""
+    def __init__(self):
         super().__init__()
-        self.image = image
-        self.rect = self.image.get_rect()
-        self.mask = pygame.mask.from_surface(image)
-
-    def can_move(self, delta_pos, wall_map, count=1):
-        old_pos = self.rect.center
-        self.rect.centerx = self.rect.centerx + delta_pos[0]
-        self.rect.centery = self.rect.centery + delta_pos[0]
-        result = bool(pygame.sprite.collide_mask(self, wall_map))
-        if count:
-            result &= not self.can_move(delta_pos, wall_map, count - 1)
-        self.rect.center = old_pos
-        return not result
+        blocks = [[0, 0],
+                 [0, 44],
+                 [0, 88],
+                 [0, 44*3],
+                 [0, 44*4],
+                 [0, 44*5],
+                 [44, 0]
+                ]
+        for item in blocks:
+            block = Block(item[0], item[1])
+            self.block_list.add(block)
 
 
-class Maze(pygame.sprite.Sprite):
+class Maze2(Maze):
     def __init__(self):
-       self.M = 15
-       self.N = 15
-       self.maze = [ 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
-                     0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,
-                     1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,
-                     1,1,1,1,1,1,1,0,0,0,0,0,0,0,1,
-                     1,1,1,1,1,1,1,0,1,1,1,1,1,0,1,
-                     1,1,1,1,1,1,1,0,1,0,0,0,1,0,1,
-                     1,1,1,1,1,1,1,0,1,0,1,1,1,0,1,
-                     1,1,1,1,1,1,1,0,0,0,0,0,0,0,1,
-                     1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,
-                     1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,
-                     1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,
-                     1,1,1,1,1,1,1,0,0,0,0,1,1,1,1,
-                     1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,
-                     1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,
-                     1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,]
+        super().__init__()
 
-    def draw(self,display_surf,image_surf):
-       bx = 0
-       by = 0
-       for i in range(0,self.M*self.N):
-           if self.maze[ bx + (by*self.M) ] == 1:
-               display_surf.blit(image_surf,( bx * 44 , by * 44))
+        blocks = []
 
-           bx = bx + 1
-           if bx > self.M-1:
-               bx = 0
-               by = by + 1
+        for item in blocks:
+            block = Block(item[0], item[1])
+            self.block_list.add(block)
 
-class App:
-    width, height = 800, 600
-    hbox, vbox = 20, 20
-    #screen = pg.display.set_mode((width, height))
 
-    windowWidth = 1000
-    windowHeight = 800
-    player = 0
-
-    pygame.init()
-
+class Maze3(Maze):
     def __init__(self):
-        self._running = True
-        self._display_surf = None
-        self._image_surf = None
-        self._block_surf = None
-        self._bg_surf = None
-        self.character = None
-        self.bg = None
+        super().__init__()
 
-        self.player = Player()
-        self.maze = Maze()
+        blocks = []
 
+        for item in blocks:
+            block = Block(item[0], item[1])
+            self.block_list.add(block)
 
-    def on_init(self):
-        pygame.init()
-        self._display_surf = pygame.display.set_mode((self.windowWidth,self.windowHeight), pygame.HWSURFACE)
+        for x in range(100, 800, 100):
+            for y in range(50, 451, 300):
+                block = Block(x, y)
+                self.block_list.add(block)
 
-        pygame.display.set_caption('Pikachu Must Go')
-        self._running = True
-        self.character = pygame.image.load("player.png").convert()
-        self.bg = pygame.image.load("block.png").convert()
-        img = pygame.image.load('bg.png')
-        #a = pygame.image.load('icon.png')
-        #pygame.display.set_icon(a)
-        self._image_surf = GameObject(self.character)
-
-        self._block_surf = GameObject(self.bg)
-
-    def on_event(self, event):
-
-        if event.type == QUIT:
-            self._running = False
-
-    def on_loop(self):
-        pass
-
-    def on_render(self):
-        self._display_surf.fill((0,0,0))
-        self._display_surf.blit(self._image_surf.image,(self.player.x,self.player.y), self._image_surf.rect)
-        self.maze.draw(self._display_surf, self._block_surf.image)
-        pygame.display.flip()
-
-
-    def on_cleanup(self):
-        pygame.quit()
-
-
-    def on_execute(self):
-        if self.on_init() == False:
-            self._running = False
-
-        while( self._running ):
-            pygame.event.pump()
-            keys = pygame.key.get_pressed()
-
-            if (keys[K_RIGHT]):
-                self.player.moveRight()
-
-            if (keys[K_LEFT]):
-                self.player.moveLeft()
-
-
-            if (keys[K_UP]):
-                self.player.moveUp()
-
-            if (keys[K_DOWN]):
-                self.player.moveDown()
-
-            if (keys[K_ESCAPE]):
-                self._running = False
-
-            self.on_loop()
-            self.on_render()
-        self.on_cleanup()
+        for x in range(150, 700, 100):
+            block = Block(x, 200)
+            self.block_list.add(block)
 
 
 def intro():
@@ -197,10 +135,101 @@ def pikachu_is_lost():
 
 
 def main():
+    pygame.init()
+
+    screen = pygame.display.set_mode([880, 880])
+
+    pygame.display.set_caption('Maze Runner')
+
+    player = Player(50, 50)
+    movingsprites = pygame.sprite.Group()
+    movingsprites.add(player)
+
+    mazes = []
+
+    maze = Maze1()
+    mazes.append(maze)
+
+    maze = Maze2()
+    mazes.append(maze)
+
+    maze = Maze3()
+    mazes.append(maze)
+
+    current_maze_no = 0
+    current_maze = mazes[current_maze_no]
+
+    clock = pygame.time.Clock()
+
+    done = False
+
     start_time = time.time()
-    theApp = App()
-    #all_sprite_list.update()
-    theApp.on_execute()
+
+    while not done:
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                done = True
+
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_LEFT:
+                    player.changespeed(-5, 0)
+                if event.key == pygame.K_RIGHT:
+                    player.changespeed(5, 0)
+                if event.key == pygame.K_UP:
+                    player.changespeed(0, -5)
+                if event.key == pygame.K_DOWN:
+                    player.changespeed(0, 5)
+
+            if event.type == pygame.KEYUP:
+                if event.key == pygame.K_LEFT:
+                    player.changespeed(5, 0)
+                if event.key == pygame.K_RIGHT:
+                    player.changespeed(-5, 0)
+                if event.key == pygame.K_UP:
+                    player.changespeed(0, 5)
+                if event.key == pygame.K_DOWN:
+                    player.changespeed(0, -5)
+
+        player.move(current_maze.block_list)
+
+        if player.rect.x < -15:
+            if current_maze_no == 0:
+                current_maze_no = 2
+                current_maze = mazes[current_maze_no]
+                player.rect.x = 790
+            elif current_maze_no == 2:
+                current_maze_no = 1
+                current_maze = mazes[current_maze_no]
+                player.rect.x = 790
+            else:
+                current_maze_no = 0
+                current_maze = mazes[current_maze_no]
+                player.rect.x = 790
+
+        if player.rect.x > 801:
+            if current_maze_no == 0:
+                current_maze_no = 1
+                current_maze = mazes[current_maze_no]
+                player.rect.x = 0
+            elif current_maze_no == 1:
+                current_maze_no = 2
+                current_maze = mazes[current_maze_no]
+                player.rect.x = 0
+            else:
+                current_maze_no = 0
+                current_maze = mazes[current_maze_no]
+                player.rect.x = 0
+
+        screen.fill(BLACK)
+
+        movingsprites.draw(screen)
+        current_maze.block_list.draw(screen)
+
+        pygame.display.flip()
+
+        clock.tick(60)
+
     pygame.quit()
     elapsed_time = time.time() - start_time
     time.sleep(2)
@@ -209,7 +238,7 @@ def main():
 
 # def end_message():
 
-if __name__ == "__main__" :
+if __name__ == "__main__":
     intro()
     inp = input ("Are you ready for this? (Type 'y' for ready) ")
     if inp != "y":
