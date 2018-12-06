@@ -180,18 +180,18 @@ class App:
 
 def intro():
     print("Welcome to the Python game: Pikachu Must Go!")
-    time.sleep(3)
+    time.sleep(2)
     print("Pikachu is lost in a maze")
-    time.sleep(3)
+    time.sleep(2)
     print("As a kind Allegheny student, you can help him to get home!")
-    time.sleep(5)
-    print("It would be great if he can get home as soon as possible :)")
     time.sleep(3)
+    print("It would be great if he can get home as soon as possible :)")
+    time.sleep(2)
 
 
 def pikachu_is_lost():
     print("Where is your Gator Pride???")
-    time.sleep(3)
+    time.sleep(2)
     print("Pikachu is now lost in this maze forever...")
     quit()
 
