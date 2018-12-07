@@ -72,59 +72,16 @@ class Maze1(Maze):
     """This creates all the blocks in maze 1"""
     def __init__(self):
         super().__init__()
-        blocks = [[0, 0], #origin block
-                 #[0, 44], #left border start
-                 [0, 44*2],
-                 [0, 44*3],
-                 [0, 44*4],
-                 [0, 44*5],
-                 [44, 44*5],
-                 [44*2, 44*5],
-                 [44*3, 44*5],
-                 [44*4, 44*5],
-                 [44*5, 44*5],
-                 [44*6, 44*5],
-                 [44*7, 44*5],
-                 [44*8, 44*5],
-                 [44*8, 44*6],
-                 [44*8, 44*7],
-                 [44*8, 44*8],
-                 [44*8, 44*9],
-                 [44*8, 44*10],
-                 [44*7, 44*10],
-                 [1717, 0], #right border start
-                 [44, 0], #top border start
-                 [44*2, 0],
-                 [44*2, 0],
-                 [44*3, 0],
-                 [44*4, 0],
-                 [44*5, 0],
-                 [44*6, 0],
-                 [44*7, 0],
-                 [44*8, 0],
-                 [44*9, 0],
-                 [44*10, 0],
-                 [44*10, 0],
-                 [44*10, 44],
-                 [44*10, 44*2],
-                 [44*10, 44*3],
-                 [44*10, 44*4],
-                 [44*10, 44*5],
-                 [44*10, 44*6],
-                 [44*10, 44*7],
-                 [44*10, 44*8],
-                 [44*10, 44*9],
-                 [44*10, 44*10],
-                ]
-        for item in blocks:
-            block = Block(item[0], item[1])
-            self.block_list.add(block)
-"""
-        for i in range(1,20):
+        blocks = [[44, 0]]
+        for i in range(40):
             for item in blocks:
                 block = Block(item[0]*i, item[1])
                 self.block_list.add(block)
-"""
+        blocks = [[0, 44]]
+        for i in range(2,20):
+            for item in blocks:
+                block = Block(item[0], item[1]*i)
+                self.block_list.add(block)
 
 
 class Maze2(Maze): #right maze
@@ -288,7 +245,7 @@ def main():
 # def end_message():
 
 if __name__ == "__main__":
-    #intro()
+    intro()
     inp = input ("Are you ready for this? (Type 'y' for ready) ")
     if inp != "y":
         pikachu_is_lost()
