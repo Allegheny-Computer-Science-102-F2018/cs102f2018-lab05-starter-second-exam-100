@@ -82,6 +82,34 @@ class Maze1(Maze):
             for item in blocks:
                 block = Block(item[0], item[1]*i)
                 self.block_list.add(block)
+        blocks = [[44, 836]]
+        for i in range(40):
+            for item in blocks:
+                block = Block(item[0]*i,item[1])
+                self.block_list.add(block)
+        blocks = [[1716, 44]]
+        for i in range(18):
+            for item in blocks:
+                block = Block(item[0],item[1]*i)
+                self.block_list.add(block)
+        for n in range(8):
+            blocks = [[836, 44*n]]
+            for i in range(20):
+                for item in blocks:
+                    block = Block(item[0]+44*i,item[1])
+                    self.block_list.add(block)
+        for n in range(6):
+            blocks = [[44, 88+44*n]]
+            for i in range(18):
+                for item in blocks:
+                    block = Block(item[0]*i,item[1])
+                    self.block_list.add(block)
+        for n in range(9):
+            blocks = [[88, 396+44*n]]
+            for i in range(36):
+                for item in blocks:
+                    block = Block(item[0]+44*i,item[1])
+                    self.block_list.add(block)
 
 
 class Maze2(Maze): #right maze
@@ -199,21 +227,21 @@ def main():
 
         player.move(current_maze.block_list)
 
-        if player.rect.x < -15:
+        if player.rect.x < 0:
             if current_maze_no == 0:
                 current_maze_no = 2
                 current_maze = mazes[current_maze_no]
-                player.rect.x = 790
+                player.rect.x = 1736
             elif current_maze_no == 2:
                 current_maze_no = 1
                 current_maze = mazes[current_maze_no]
-                player.rect.x = 790
+                player.rect.x = 1736
             else:
                 current_maze_no = 0
                 current_maze = mazes[current_maze_no]
-                player.rect.x = 790
+                player.rect.x = 1736
 
-        if player.rect.x > 1720:
+        if player.rect.x > 1760:
             if current_maze_no == 0:
                 current_maze_no = 1
                 current_maze = mazes[current_maze_no]
@@ -245,7 +273,7 @@ def main():
 # def end_message():
 
 if __name__ == "__main__":
-    intro()
+    #intro()
     inp = input ("Are you ready for this? (Type 'y' for ready) ")
     if inp != "y":
         pikachu_is_lost()
