@@ -115,13 +115,77 @@ class Maze1(Maze):
 class Maze2(Maze): #right maze
     def __init__(self):
         super().__init__()
-
-        blocks = []
-
-        for item in blocks:
-            block = Block(item[0], item[1])
-            self.block_list.add(block)
-
+        blocks = [[44, 0]]
+        for i in range(40):
+            for item in blocks:
+                block = Block(item[0]*i, item[1])
+                self.block_list.add(block)
+        blocks = [[0, 44]]
+        for i in range(1,18):
+            for item in blocks:
+                block = Block(item[0], item[1]*i)
+                self.block_list.add(block)
+        blocks = [[44, 836]]
+        for i in range(40):
+            for item in blocks:
+                block = Block(item[0]*i,item[1])
+                self.block_list.add(block)
+        blocks = [[1716, 88]]
+        for i in range(17):
+            for item in blocks:
+                block = Block(item[0],item[1]+44*i)
+                self.block_list.add(block)
+        for n in range(16):
+            blocks = [[88, 88+44*n]]
+            for i in range(8):
+                for item in blocks:
+                    block = Block(item[0]+44*i,item[1])
+                    self.block_list.add(block)
+        blocks = [[484, 44]]
+        for i in range(17):
+            for item in blocks:
+                block = Block(item[0],item[1]+44*i)
+                self.block_list.add(block)
+        for n in range(6):
+            blocks = [[572, 88+44*n]]
+            for i in range(8):
+                for item in blocks:
+                    block = Block(item[0]+44*i,item[1])
+                    self.block_list.add(block)
+        blocks = [[572, 88]]
+        for i in range(16):
+            for item in blocks:
+                block = Block(item[0],item[1]+44*i)
+                self.block_list.add(block)
+        for n in range(6):
+            blocks = [[572, 528+44*n]]
+            for i in range(8):
+                for item in blocks:
+                    block = Block(item[0]+44*i,item[1])
+                    self.block_list.add(block)
+        for n in range(2):
+            blocks = [[660, 396+44*n]]
+            for i in range(8):
+                for item in blocks:
+                    block = Block(item[0]+44*i,item[1])
+                    self.block_list.add(block)
+        blocks = [[968, 44]]
+        for i in range(17):
+            for item in blocks:
+                block = Block(item[0],item[1]+44*i)
+                self.block_list.add(block)
+        for n in range(16):
+            blocks = [[1056, 88+44*n]]
+            for i in range(8):
+                for item in blocks:
+                    block = Block(item[0]+44*i,item[1])
+                    self.block_list.add(block)
+        for n in range(17):
+            blocks = [[1408, 88+44*n]]
+            for i in range(8):
+                for item in blocks:
+                    block = Block(item[0]+44*i,item[1])
+                    self.block_list.add(block)
 
 class Maze3(Maze): #left maze
     def __init__(self):
@@ -273,7 +337,7 @@ def main():
 # def end_message():
 
 if __name__ == "__main__":
-    #intro()
+    intro()
     inp = input ("Are you ready for this? (Type 'y' for ready) ")
     if inp != "y":
         pikachu_is_lost()
