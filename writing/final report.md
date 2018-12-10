@@ -1,6 +1,7 @@
 # The Maze Game
-## Group Names: Lancaster Wu, Devin Ho, Jon Reibel, Devin Spitalny
 ## Date: 9 Dec 2018
+## Group Names: Lancaster Wu, Devin Ho, Jon Reibel, Devin Spitalny
+
 
 The motivation of this project was developed on the idea of the seven bridges of Konigsberg. The seven bridges problem was based in Konigsberg, Prussia, which included a mathematical problem where the city was separated by the Pregel River and two large islands called Kneiphof and Lomse. The goal was to connect bridges across the river and to the islands once and only once. This solution would make the city more transparent meaning they would be able to go to one location as quick as possible. The seven bridges of Konigsberg help set up the concept of graph theory. Graph Theory is the mathematical theory of the properties and applications of graphs. We wanted to use graph theory and implement that into a maze game. The reason we picked creating a maze game was from our very own Lancaster Wu. It all started when we were playing a regular maze game online and he summoned us to a competition. The competition consisted of all of us playing the same level of the maze game we found online and whoever finished in the fastest time wins. That's where we figured out we can implement the idea of graph theory in the maze. The idea of our project is to use graph theory in our maze to find the quickest path from start to finish.
 
