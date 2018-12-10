@@ -1,0 +1,45 @@
+## Date: 9 Dec 2018
+## Group Names: Lancaster Wu, Devin Ho, Jon Reibel, Devin Spitalny
+
+## Paragraph 1: Motivation
+
+## Paragraph 2: Detailed description of completed work. What you implemented and how
+
+## Paragraph 3: UML Diagram
+
+## Paragraph 4: Description of results. Graphs tables snapshots to provide understanding.
+The program will provide an output of print lines asking user to choose if they are ready or not. User needs to type “y” (lower case) to start run the maze game.
+
+![1](images/1.png)
+
+If the user type anything besides “y”(lower case), the program will end.
+
+![2](images/2.png)
+
+If the user does type “y”(lower case) to run the program, the maze game will run. The user can control the character which is a Pikachu by using “up”, “down”, “left”, and “right”.  The music, “ Pikachu theme song”, will be running while user playing the game. The following picture is the first maze:
+
+![3](images/3.png)
+
+Two possible walks of the first maze:
+
+![7](images/7.png)
+
+The second maze:
+
+![4](images/4.png)
+
+The third maze:
+
+![5](images/5.png)
+
+After user finished the third maze, they will be able to see the time cost of running the maze.
+
+![6](images/6.png)
+
+Based on the different path choices made by users, even if they are moving the character with the exactly same speed, the result time cost will be different.
+
+## Paragraph 5: Conclusion. Short recap and results. What was learned. Challenges and rewards.
+
+## Include all sources for important websites and images used and make a short bibliography.
+
+https://mrpandey.github.io/d3graphTheory/unit.html
