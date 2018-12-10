@@ -1,6 +1,6 @@
-## Date: 9 Dec 2018
+# The Maze Game
 ## Group Names: Lancaster Wu, Devin Ho, Jon Reibel, Devin Spitalny
-
+## Date: 9 Dec 2018
 
 The motivation of this project was developed on the idea of the seven bridges of Konigsberg. The seven bridges problem was based in Konigsberg, Prussia, which included a mathematical problem where the city was separated by the Pregel River and two large islands called Kneiphof and Lomse. The goal was to connect bridges across the river and to the islands once and only once. This solution would make the city more transparent meaning they would be able to go to one location as quick as possible. The seven bridges of Konigsberg help set up the concept of graph theory. Graph Theory is the mathematical theory of the properties and applications of graphs. We wanted to use graph theory and implement that into a maze game. The reason we picked creating a maze game was from our very own Lancaster Wu. It all started when we were playing a regular maze game online and he summoned us to a competition. The competition consisted of all of us playing the same level of the maze game we found online and whoever finished in the fastest time wins. That's where we figured out we can implement the idea of graph theory in the maze. The idea of our project is to use graph theory in our maze to find the quickest path from start to finish.
 
@@ -56,8 +56,8 @@ The recap of our final project included the implementation of three mazes. The t
 Our team originally came up with the maze idea and discussed the different attributes the game would have to include. After we planned out our ideas, we ran into some issues. We did some research and decided to use Pygame for the base of our game. It included the methods that we needed to create the game and also create the add-ons. In this case, Lancaster created most of the classes responsible for the actual structure of the maze, including: Player, Block, Maze1, Maze2, and Maze3. Jon was working on figuring out how to make the block have collision. This sets the bound for the player to inhibit him from moving through a block. Devin Ho worked on the user interface along with the graphical side of the game. He used Pygame methods in order to initialize and load the images for the window icon, taskbar icon, and background music for the game. Devin Spitalny worked on fixing the issues in the program when the Python compiler failed and could not run the program. He was in charge of creating the presentation for our group. All in all, our group ran into many setbacks, but we were able to solve the problems and implement the game in a sufficient time-frame.
 
 
-#                                              Works Cited
-### Resources:
+##                                              Works Cited
+#### Resources:
 
 * Pandey, Avinash. “Interactive Graph Theory Tutorials.” D3 Graph Theory, mrpandey.github.io/d3graphTheory/unit.html.
 
@@ -65,7 +65,7 @@ Our team originally came up with the maze idea and discussed the different attri
 
 * m8gr75. “m8gr75/Pygame.” GitHub, * * * github.com/m8gr75/pygame/blob/master/Maze_1.py.
 
-### Media:
+#### Media:
 
 * http://thestudents.wikia.com/wiki/File:Pikachu_transparent.png
 
