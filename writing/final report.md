@@ -56,19 +56,19 @@ The recap of our final project included the implementation of three mazes. The t
 Our team originally came up with the maze idea and discussed the different attributes the game would have to include. After we planned out our ideas, we ran into some issues. We did some research and decided to use Pygame for the base of our game. It included the methods that we needed to create the game and also create the add-ons. In this case, Lancaster created most of the classes responsible for the actual structure of the maze, including: Player, Block, Maze1, Maze2, and Maze3. Jon was working on figuring out how to make the block have collision. This sets the bound for the player to inhibit him from moving through a block. Devin Ho worked on the user interface along with the graphical side of the game. He used Pygame methods in order to initialize and load the images for the window icon, taskbar icon, and background music for the game. Devin Spitalny worked on fixing the issues in the program when the Python compiler failed and could not run the program. He was in charge of creating the presentation for our group. All in all, our group ran into many setbacks, but we were able to solve the problems and implement the game in a sufficient time-frame.
 
 
-                                    Works Cited
-Resources:
+#                                         Works Cited
+# Resources:
 
-Pandey, Avinash. “Interactive Graph Theory Tutorials.” D3 Graph Theory, mrpandey.github.io/d3graphTheory/unit.html.
+* Pandey, Avinash. “Interactive Graph Theory Tutorials.” D3 Graph Theory, mrpandey.github.io/d3graphTheory/unit.html.
 
-“Python Advanced Course Topics.” Python Advanced: Introduction into the Sys Module, www.python-course.eu/graphs_python.php.
+* “Python Advanced Course Topics.” Python Advanced: Introduction into the Sys Module, www.python-course.eu/graphs_python.php.
 
-m8gr75. “m8gr75/Pygame.” GitHub, github.com/m8gr75/pygame/blob/master/Maze_1.py.
+* m8gr75. “m8gr75/Pygame.” GitHub, * * * github.com/m8gr75/pygame/blob/master/Maze_1.py.
 
-Media:
+# Media:
 
-http://thestudents.wikia.com/wiki/File:Pikachu_transparent.png
+* http://thestudents.wikia.com/wiki/File:Pikachu_transparent.png
 
-https://i.pinimg.com/originals/c3/47/91/c34791950b712e3c50b9d87b3b03f510.png
+* https://i.pinimg.com/originals/c3/47/91/c34791950b712e3c50b9d87b3b03f510.png
 
-https://www.youtube.com/watch?v=BBZVGDoGDlo
+* https://www.youtube.com/watch?v=BBZVGDoGDlo
