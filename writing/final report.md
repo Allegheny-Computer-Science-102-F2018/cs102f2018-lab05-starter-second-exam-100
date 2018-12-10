@@ -1,5 +1,5 @@
 # The Maze Game
-## Date: 9 Dec 2018
+## Date: December 9, 2018
 ## Group Names: Lancaster Wu, Devin Ho, Jon Reibel, Devin Spitalny
 
 
