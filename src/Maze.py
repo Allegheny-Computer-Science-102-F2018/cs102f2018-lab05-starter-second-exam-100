@@ -190,22 +190,77 @@ class Maze2(Maze): #right maze
 class Maze3(Maze): #left maze
     def __init__(self):
         super().__init__()
-
-        blocks = []
-
-        for item in blocks:
-            block = Block(item[0], item[1])
-            self.block_list.add(block)
-
+        blocks = [[44, 0]]
         for i in range(40):
-            for x in range(1760):
-                for y in range(0):
-                    block = Block(x*i, y)
+            for item in blocks:
+                block = Block(item[0]*i, item[1])
+                self.block_list.add(block)
+        blocks = [[0, 44]]
+        for i in range(2,19):
+            for item in blocks:
+                block = Block(item[0], item[1]*i)
+                self.block_list.add(block)
+        blocks = [[44, 836]]
+        for i in range(40):
+            for item in blocks:
+                block = Block(item[0]*i,item[1])
+                self.block_list.add(block)
+        blocks = [[1716, 88]]
+        for i in range(17):
+            for item in blocks:
+                block = Block(item[0],item[1]+44*i)
+                self.block_list.add(block)
+        for n in range(16):
+            blocks = [[88, 88+44*n]]
+            for i in range(8):
+                for item in blocks:
+                    block = Block(item[0]+44*i,item[1])
                     self.block_list.add(block)
-
-        for x in range(150, 700, 100):
-            block = Block(x, 200)
-            self.block_list.add(block)
+        blocks = [[484, 44]]
+        for i in range(17):
+            for item in blocks:
+                block = Block(item[0],item[1]+44*i)
+                self.block_list.add(block)
+        for n in range(6):
+            blocks = [[572, 88+44*n]]
+            for i in range(8):
+                for item in blocks:
+                    block = Block(item[0]+44*i,item[1])
+                    self.block_list.add(block)
+        blocks = [[572, 88]]
+        for i in range(16):
+            for item in blocks:
+                block = Block(item[0],item[1]+44*i)
+                self.block_list.add(block)
+        for n in range(6):
+            blocks = [[572, 528+44*n]]
+            for i in range(8):
+                for item in blocks:
+                    block = Block(item[0]+44*i,item[1])
+                    self.block_list.add(block)
+        for n in range(2):
+            blocks = [[660, 396+44*n]]
+            for i in range(8):
+                for item in blocks:
+                    block = Block(item[0]+44*i,item[1])
+                    self.block_list.add(block)
+        blocks = [[968, 44]]
+        for i in range(17):
+            for item in blocks:
+                block = Block(item[0],item[1]+44*i)
+                self.block_list.add(block)
+        for n in range(16):
+            blocks = [[1056, 88+44*n]]
+            for i in range(8):
+                for item in blocks:
+                    block = Block(item[0]+44*i,item[1])
+                    self.block_list.add(block)
+        for n in range(17):
+            blocks = [[1408, 88+44*n]]
+            for i in range(8):
+                for item in blocks:
+                    block = Block(item[0]+44*i,item[1])
+                    self.block_list.add(block)
 
 
 def intro():
@@ -315,9 +370,8 @@ def main():
                 current_maze = mazes[current_maze_no]
                 player.rect.x = 0
             else:
-                current_maze_no = 0
-                current_maze = mazes[current_maze_no]
-                player.rect.x = 0
+                break
+
 
         screen.fill(BLACK)
 
