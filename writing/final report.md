@@ -6,9 +6,7 @@ The motivation of this project was developed on the idea of the seven bridges of
 
 We created a maze game that included a graphical interface. This game starts off in the terminal where the story begins. The narrator of the story asks you to help Pikachu to guide him through the maze. The user is then prompted to input “y” to begin the game. A window appears as the game, and then the user plays as Pikachu. We implemented this by creating different classes and functions for the the terminal output as well as the graphic interface. We trigger the graphical interface and then utilize the Pygame module to add background music, icons, and images. There are separate classes for the 3 different mazes as well as the player and blocks for collision. After the player reaches the end of the maze, the game will end and the graphical interface will close. The terminal will then output a timer noting how long it took the player to reach the end of the maze to win the game. This gives us a good understanding of how graph theory is used by manually running the maze yourself. You can take different paths in order to reach the end and see how long it took for each path.
 
-![9](images/9.png)
-
-![8](images/8.png)
+![9](images/9.png) ![8](images/8.png)
 
 Provided here is a flow chart designed to show how the code interacts with itself. It links the classes and definitions showing how each piece is called and linked back to other classes and definitions.
 
