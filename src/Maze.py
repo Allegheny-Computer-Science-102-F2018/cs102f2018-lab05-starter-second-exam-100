@@ -283,7 +283,9 @@ def pikachu_is_lost():
 
 def main():
     pygame.init()
-
+    pygame.mixer.init()
+    pygame.mixer.music.load("PMGmusic.mp3")
+    pygame.mixer.music.play(-1,0.0)
     screen = pygame.display.set_mode([1760, 880])
 
     pygame.display.set_caption('Pikachu Must Go!')
