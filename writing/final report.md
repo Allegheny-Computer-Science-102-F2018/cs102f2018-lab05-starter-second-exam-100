@@ -13,23 +13,38 @@ Provided here is a flow chart designed to show how the code interacts with itsel
 So as you can see, This diagram is made up of several classes and definitions. Each one preforms a specific task that differs from the others.It may seem difficult to sort out all of the task being preformed within the code but using our knowledge from class it is rather simple. Since the code is based on a few classes and definitions, it was actually rather simple to see how it is all interconnected. For example, The Maze class instantiates an instance of the maze and then allows it to be called by the Maze1, Maze2, and Maze3 classes. That was just one example, you can see how other links are created by further studying the provided diagram. Knowing how the code worked was a key step in this process as it allowed us to spend more time focusing on the implementation and functionality of our project rather than trying to decipher the code.
 
 The program will provide an output of print lines asking user to choose if they are ready or not. User needs to type “y” (lower case) to start run the maze game.
+
 ![1](images/1.png)
+
 If the user type anything besides “y”(lower case), the program will end.
+
 ![2](images/2.png)
-If the user does type “y”(lower case) to run the program, the maze game will run. The user can control the character which is a Pikachu by using “up”, “down”, “left”, and “right”.  The music, “ Pikachu theme song”, will be running while user playing the game. The following picture is the first maze:
+
+If the user does type “y”(lower case) to run the program, the maze game will run. The user can control the character which is a Pikachu by using “up”, “down”, “left”, and “right”.  The music, “ Pikachu theme song”, will be running while user playing the game.
+The following picture is the first maze:
+
 ![3](images/3.png)
+
 Two possible walks of the first maze:
+
 ![7](images/7.png)
+
 The second maze:
+
 ![4](images/4.png)
+
 The third maze:
+
 ![5](images/5.png)
+
 After user finished the third maze, they will be able to see the time cost of running the maze.
+
 ![6](images/6.png)
 
 Based on the different path choices made by users, even if they are moving the character with the exactly same speed, the result time cost will be different.
 
 The recap of our final project included the implementation of three mazes. The three mazes run in order meaning after you find the path of one maze it goes to the next maze until you complete all three mazes. Some of the cool implementations we have made to our maze includes setting  Pikachu as the avatar that goes through the maze, music that plays throughout the game, and a timer that tells you how long it took you to finish the maze. After we finished our maze game we decided to make a competition out of the game. The rules were simple and stated the person to get through the maze the fastest will be conducted as the winner. The results from the competition included Lancaster Wu getting first place with a time of 28.7 seconds, Devin Spitalny getting second place with a time of 36.6 seconds, Jon Reibel getting third place with a time of 39.6 seconds, and Devin Ho getting the last place with a time of 44.3 seconds.
+
 ![11](images/11.png)
 
  During this whole project, we have learned a lot about graph theory and mazes. We learned that there are more steps than we ever could imagine that included setting up the pygame library into the game, making classes like block which set up the boundaries, player which set up the person playing the game, maze which set up the features for all the mazes, maze1 which set up the first maze, maze2 which set up the the second maze, maze3 which set up the the third maze, also we had to include images that made help make the boundaries and the avatar for the player, adding a music feature, and lastly a game over feature so when you finish the maze it would time you to see how long it took you to finish the maze. A Lot of challenges were caused in the making of this project which included a horrible design strategy which made it incredibly hard to figure out a technique for making the maze’s, image resizing was another issue because we would make the images way to big or small where it would be impossible for the game to work, collision implementation which involved creating the boundaries for the game which was a big issue because we would have the game set up but the boundaries weren’t working so you could just skip throughout the whole game without a maze implemented, sRGB errors was also a big issue just because we were having coloring issues, the last challenge we faced in this game was making the whole size of the game convertible for any monitor so that the game would be able to be playable for any device. The rewards that we have gained from this project included how to make a game using the pygame libraries, understanding the whole concept of how graph theory works and working together as a team to figure out any problem we have encountered.
